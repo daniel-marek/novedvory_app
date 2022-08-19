@@ -1,3 +1,5 @@
+$color-nejaka: red;
+
 .container {
   padding: 0 2rem;
 }
@@ -54,6 +56,10 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.nadpis {
+    color: red;
 }
 
 .code {
