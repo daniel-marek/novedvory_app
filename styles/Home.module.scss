@@ -1,3 +1,5 @@
+@import './variables.module.scss';
+
 .container {
   padding: 0 2rem;
 }
@@ -56,6 +58,10 @@
   font-size: 1.5rem;
 }
 
+.nadpis {
+    color: $color-nejaka;
+}
+
 .code {
   background: #fafafa;
   border-radius: 5px;
@@ -112,18 +118,5 @@
   .grid {
     width: 100%;
     flex-direction: column;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
   }
 }
