@@ -1,4 +1,4 @@
-$color-nejaka: red;
+@import './variables.module.scss';
 
 .container {
   padding: 0 2rem;
@@ -59,7 +59,7 @@ $color-nejaka: red;
 }
 
 .nadpis {
-    color: red;
+    color: $color-nejaka;
 }
 
 .code {
@@ -118,18 +118,5 @@ $color-nejaka: red;
   .grid {
     width: 100%;
     flex-direction: column;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
   }
 }
