@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
-    <body className={styles.body}>
+    <div className={styles.body}>
       <header className={styles.header}>
         <a className={styles.logo} href="#">
           <img  src="logo.png" alt="logo-nove-dvory" width="120px" />
@@ -25,7 +25,7 @@ export default function Home() {
             <button>Program zápasů</button>
         </a>
       </header>
-    </body>
+    </div>
   );
   
 }
