@@ -1,5 +1,54 @@
 @import './variables.module.scss';
 
+.body {
+  font-family: $font;
+}
+
+.header {
+  display: flex;
+  padding: 10px 10%;
+  align-items: center;
+  justify-content:space-between;
+  background-color: $color-primary;
+  border-bottom: 5px solid $color-secondary;
+}
+.nav__links {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 30px;
+  color: $color-white;
+  font-size: 18px;
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links li:hover {
+  color: $color-grey;
+}
+
+.cta button {
+  padding: 15px 30px;
+  background-color: $color-secondary;
+  color: $color-primary;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+    
+}
+
+.cta button:hover {
+  background-color: $color-blue;
+  color: $color-white;
+}
+
+
+
+/*
 .container {
   padding: 0 2rem;
 }
@@ -120,3 +169,6 @@
     flex-direction: column;
   }
 }
+
+
+*/

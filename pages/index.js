@@ -2,7 +2,34 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 
+
+
 export default function Home() {
+  return (
+    <body className={styles.body}>
+      <header className={styles.header}>
+        <a className={styles.logo} href="#">
+          <img  src="logo.png" alt="logo-nove-dvory" width="120px" />
+        </a>
+        <nav>
+          <ul className={styles.nav__links}>
+            <li><a href="#">Aktuality</a></li>
+            <li><a href="#">Muži A</a></li>
+            <li><a href="#">Hřiště</a></li>
+            <li><a href="#">Sponzoři</a></li>
+            <li><a href="#">Historie</a></li>
+            <li><a href="#">Klub</a></li>
+          </ul>
+        </nav>
+        <a className={styles.cta} href="#">
+            <button>Program zápasů</button>
+        </a>
+      </header>
+    </body>
+  );
+  
+}
+/*
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +40,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={`${styles.title} ${styles.nadpis}`}>
-          Welcome to <a href="https://nextjs.org">1933 SK CUS Nove Dvory</a>
+          Welcome to <a href="https://nextjs.org">1934 SK CUS Nove Dvory</a>
         </h1>
 
         <p className={styles.description}>
@@ -67,3 +94,4 @@ export default function Home() {
     </div>
   )
 }
+*/
