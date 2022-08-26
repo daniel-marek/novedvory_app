@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
-    <div className={styles.body}>
+    <div>
       <header className={styles.header}>
         <a className={styles.logo} href="#">
           <img  src="logo.png" alt="logo-nove-dvory" width="120px" />
