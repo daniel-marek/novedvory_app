@@ -6,10 +6,10 @@ import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.container}>
       <header className={styles.header}>
         <a className={styles.logo} href="#">
-          <img  src="logo.png" alt="logo-nove-dvory" width="120px" />
+          <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
         </a>
         <nav>
           <ul className={styles.nav__links}>
@@ -25,7 +25,48 @@ export default function Home() {
             <button>Program zápasů</button>
         </a>
       </header>
+      
+      <div className={styles.buttons}>
+        <a href="#">
+          <button>pohár OFS - rozlosování a výsledky</button>
+        </a>
+        <a href="#">
+          <button>OKRESNÍ PŘEBOR - rozlosování a výsledky</button>
+        </a>
+        <a href="#">
+          <button>OKRESNÍ PŘEBOR - tabulka</button>
+        </a>   
+      </div>
+
+      <div className={styles.news}>
+        <h2>Další zprávy</h2>
+        <img src='clanek_1.jpg' alt='clanek 1' />
+        <img src='clanek_1.jpg' alt='clanek 2' />
+        <img src='clanek_1.jpg' alt='clanek 3' />
+      </div>
+
+      <div className={styles.sponsors}>
+        <h2>Sponzoři</h2>
+        <img src='sponzori.png' alt=''  />
+      </div>
+
+      <footer className={styles.footer}>
+        <a href="#">
+          <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
+        </a>
+        <ul class={styles.nav_links_footer}>
+            <li><a href="#">Aktuality</a></li>
+            <li><a href="#">Muži A</a></li>
+            <li><a href="#">Hřiště</a></li>
+            <li><a href="#">Sponzoři</a></li>
+            <li><a href="#">Historie</a></li>
+            <li><a href="#">Klub</a></li>
+        </ul>
+        <h4>© 2022 Fotbalový klub SK 1933 ČUS Nové Dvory</h4>
+      </footer>
+            
     </div>
+    
   );
   
 }
