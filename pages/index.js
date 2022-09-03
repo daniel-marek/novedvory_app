@@ -6,9 +6,10 @@ import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <header className={styles.header}>
-        <a className={styles.logo} href="#">
+        <div className={styles.container}>
+            <a className={styles.logo} href="#">
           <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
         </a>
         <nav>
@@ -24,25 +25,38 @@ export default function Home() {
         <a className={styles.cta} href="#">
             <button>Program zápasů</button>
         </a>
+        </div>
       </header>
       
-      <div className={styles.buttons}>
-        <a href="#">
-          <button>pohár OFS - rozlosování a výsledky</button>
+      <div className={styles.container}>
+          <div className={styles.buttons}>
+        <a href="#" className={styles.buttons__link}>
+          Pohár OFS - rozlosování a výsledky
         </a>
-        <a href="#">
-          <button>OKRESNÍ PŘEBOR - rozlosování a výsledky</button>
+        <a href="#" className={styles.buttons__link}>
+          OKRESNÍ PŘEBOR - rozlosování a výsledky
         </a>
-        <a href="#">
-          <button>OKRESNÍ PŘEBOR - tabulka</button>
-        </a>   
+        <a href="#" className={styles.buttons__link}>
+          OKRESNÍ PŘEBOR - tabulka
+        </a>
       </div>
 
       <div className={styles.news}>
         <h2>Další zprávy</h2>
-        <img src='clanek_1.jpg' alt='clanek 1' />
-        <img src='clanek_1.jpg' alt='clanek 2' />
-        <img src='clanek_1.jpg' alt='clanek 3' />
+          <div className={styles.news__items}>
+              <div>
+                  <img src='clanek_1.jpg' alt='clanek 1' />
+              </div>
+              <div>
+                  <img src='clanek_1.jpg' alt='clanek 2' />
+              </div>
+              <div>
+                  <img src='clanek_1.jpg' alt='clanek 3' />
+              </div>
+          </div>
+
+
+
       </div>
 
       <div className={styles.sponsors}>
@@ -54,7 +68,7 @@ export default function Home() {
         <a href="#">
           <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
         </a>
-        <ul class={styles.nav_links_footer}>
+        <ul className={styles.nav_links_footer}>
             <li><a href="#">Aktuality</a></li>
             <li><a href="#">Muži A</a></li>
             <li><a href="#">Hřiště</a></li>
@@ -64,6 +78,7 @@ export default function Home() {
         </ul>
         <h4>© 2022 Fotbalový klub SK 1933 ČUS Nové Dvory</h4>
       </footer>
+      </div>
             
     </div>
     
