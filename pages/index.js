@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <header className={styles.header}>
-        <div className={styles.container}>
+          <div className={styles.container__header}>
             <a className={styles.logo} href="#">
           <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
         </a>
@@ -27,8 +27,25 @@ export default function Home() {
         </a>
         </div>
       </header>
+
+      
       
       <div className={styles.container}>
+        
+        <div className={styles.articles}>
+          
+            <div className={styles.articles__big}>
+              <img src="clanek_1.jpg" alt='clanek 1' />
+            </div>
+            <div className={styles.articles__small}>
+              <img src="clanek_1.jpg" alt='clanek 2' />
+              <img src="clanek_1.jpg" alt='clanek 3' />
+            </div>
+          
+
+        </div>
+        
+
           <div className={styles.buttons}>
         <a href="#" className={styles.buttons__link}>
           Pohár OFS - rozlosování a výsledky
@@ -61,24 +78,36 @@ export default function Home() {
 
       <div className={styles.sponsors}>
         <h2>Sponzoři</h2>
-        <img src='sponzori.png' alt=''  />
+        <div className={styles.sponsors__items}>
+          <div>
+            <img src='nove_dvory.png' alt=''  />
+          </div>
+          <div>
+            <img src='stredocesky_kraj.gif' alt=''  />
+          </div>
+          
+        </div>
       </div>
 
+    </div>
+
       <footer className={styles.footer}>
-        <a href="#">
-          <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
-        </a>
-        <ul className={styles.nav_links_footer}>
-            <li><a href="#">Aktuality</a></li>
-            <li><a href="#">Muži A</a></li>
-            <li><a href="#">Hřiště</a></li>
-            <li><a href="#">Sponzoři</a></li>
-            <li><a href="#">Historie</a></li>
-            <li><a href="#">Klub</a></li>
-        </ul>
-        <h4>© 2022 Fotbalový klub SK 1933 ČUS Nové Dvory</h4>
+        <div className={styles.footer__items}>
+          <a href="#">
+            <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
+          </a>
+          <ul className={styles.nav_links_footer}>
+              <li><a href="#">Aktuality</a></li>
+              <li><a href="#">Muži A</a></li>
+              <li><a href="#">Hřiště</a></li>
+              <li><a href="#">Sponzoři</a></li>
+              <li><a href="#">Historie</a></li>
+              <li><a href="#">Klub</a></li>
+          </ul>
+          <h4>© 2022 Fotbalový klub SK 1933 ČUS Nové Dvory</h4>
+        </div>
       </footer>
-      </div>
+      
             
     </div>
     
