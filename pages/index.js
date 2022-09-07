@@ -31,18 +31,16 @@ export default function Home() {
       
       
       <div className={styles.container}>
-        
-        <div className={styles.articles}>
-          
-            <div className={styles.articles__big}>
-              <img src="clanek_1.jpg" alt='clanek 1' />
+          <div className={styles.articles}>
+            <div className={`${styles.articles__article} ${styles["articles__article--big"]}`} style={{'--url': 'url(https://picsum.photos/320/240)'}}>
+                <h3>PRDEL!</h3>
             </div>
-            <div className={styles.articles__small}>
-              <img src="clanek_1.jpg" alt='clanek 2' />
-              <img src="clanek_1.jpg" alt='clanek 3' />
+            <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
+                <h3>PRDEL!</h3>
             </div>
-          
-
+            <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
+                <h3>PRDEL!</h3>
+            </div>
         </div>
         
 
