@@ -2,7 +2,117 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 
+
+
 export default function Home() {
+  return (
+    <div>
+      <header className={styles.header}>
+          <div className={styles.container__header}>
+            <a className={styles.logo} href="#">
+          <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
+        </a>
+        <nav>
+          <ul className={styles.nav__links}>
+            <li><a href="#">Aktuality</a></li>
+            <li><a href="#">Muži A</a></li>
+            <li><a href="#">Hřiště</a></li>
+            <li><a href="#">Sponzoři</a></li>
+            <li><a href="#">Historie</a></li>
+            <li><a href="#">Klub</a></li>
+          </ul>
+        </nav>
+        <a className={styles.cta} href="#">
+            <button>Program zápasů</button>
+        </a>
+        </div>
+      </header>
+
+      
+      
+      <div className={styles.container}>
+          <div className={styles.articles}>
+            <div className={`${styles.articles__article} ${styles["articles__article--big"]}`} style={{'--url': 'url(https://picsum.photos/320/240)'}}>
+                <h3>PRDEL!</h3>
+            </div>
+            <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
+                <h3>PRDEL!</h3>
+            </div>
+            <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
+                <h3>PRDEL!</h3>
+            </div>
+        </div>
+        
+
+          <div className={styles.buttons}>
+        <a href="#" className={styles.buttons__link}>
+          Pohár OFS - rozlosování a výsledky
+        </a>
+        <a href="#" className={styles.buttons__link}>
+          OKRESNÍ PŘEBOR - rozlosování a výsledky
+        </a>
+        <a href="#" className={styles.buttons__link}>
+          OKRESNÍ PŘEBOR - tabulka
+        </a>
+      </div>
+
+      <div className={styles.news}>
+        <h2>Další zprávy</h2>
+          <div className={styles.news__items}>
+              <div>
+                  <img src='clanek_1.jpg' alt='clanek 1' />
+              </div>
+              <div>
+                  <img src='clanek_1.jpg' alt='clanek 2' />
+              </div>
+              <div>
+                  <img src='clanek_1.jpg' alt='clanek 3' />
+              </div>
+          </div>
+
+
+
+      </div>
+
+      <div className={styles.sponsors}>
+        <h2>Sponzoři</h2>
+        <div className={styles.sponsors__items}>
+          <div>
+            <img src='nove_dvory.png' alt=''  />
+          </div>
+          <div>
+            <img src='stredocesky_kraj.gif' alt=''  />
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+
+      <footer className={styles.footer}>
+        <div className={styles.footer__items}>
+          <a href="#">
+            <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
+          </a>
+          <ul className={styles.nav_links_footer}>
+              <li><a href="#">Aktuality</a></li>
+              <li><a href="#">Muži A</a></li>
+              <li><a href="#">Hřiště</a></li>
+              <li><a href="#">Sponzoři</a></li>
+              <li><a href="#">Historie</a></li>
+              <li><a href="#">Klub</a></li>
+          </ul>
+          <h4>© 2022 Fotbalový klub SK 1933 ČUS Nové Dvory</h4>
+        </div>
+      </footer>
+      
+            
+    </div>
+    
+  );
+  
+}
+/*
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +123,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={`${styles.title} ${styles.nadpis}`}>
-          Welcome to <a href="https://nextjs.org">1933 SK CUS Nove Dvory</a>
+          Welcome to <a href="https://nextjs.org">1934 SK CUS Nove Dvory</a>
         </h1>
 
         <p className={styles.description}>
@@ -67,3 +177,4 @@ export default function Home() {
     </div>
   )
 }
+*/
