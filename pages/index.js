@@ -10,8 +10,8 @@ export default function Home() {
       <header className={styles.header}>
           <div className={styles.container__header}>
             <a className={styles.logo} href="#">
-          <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
-        </a>
+              <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
+            </a>
         <nav>
           <ul className={styles.nav__links}>
             <li><a href="#">Aktuality</a></li>
@@ -33,14 +33,23 @@ export default function Home() {
       <div className={styles.container}>
           <div className={styles.articles}>
             <div className={`${styles.articles__article} ${styles["articles__article--big"]}`} style={{'--url': 'url(https://picsum.photos/320/240)'}}>
-                <h3>PRDEL!</h3>
-            </div>
+              <div className={styles.articles__article__big}>
+                <h4>Kategorie článku!</h4>
+                <h3>Titulek článku!</h3>
+                </div>
+              </div>
             <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
-                <h3>PRDEL!</h3>
-            </div>
+              <div className={styles.articles__article__big}>
+                <h4>Kategorie článku!</h4>
+                <h3>Titulek článku!</h3>
+                </div>
+              </div>
             <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
-                <h3>PRDEL!</h3>
-            </div>
+              <div className={styles.articles__article__small}>
+                <h4>Kategorie článku!</h4>
+                <h3>Titulek článku!</h3>
+                </div>
+              </div>
         </div>
         
 
