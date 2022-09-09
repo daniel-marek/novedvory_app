@@ -7,7 +7,7 @@
 $gap: 16px;
 
 .header {
-  padding: 10px 10%;
+  padding: 20px 10%;
   background-color: $color-blue;
   border-bottom: 5px solid $color-secondary;
 }
@@ -108,6 +108,26 @@ $gap: 16px;
     }
   }
 }
+
+.articles__article__big, .articles__article__small {
+  padding-top: 15%;
+  text-transform: uppercase;
+  h4 {
+    font-size: 12px;
+    color: $color-white;
+    background-color: $color-primary;
+    border-radius: 3px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-white;
+  }
+}
+
 
 
 .buttons {
@@ -274,7 +294,14 @@ $gap: 16px;
         width: 180px;
       }
     }
+  }
 
+  .articles {
+    text-align: center;
+  }
+
+  .articles__article__big, .articles__article__small {
+    padding-top: 30%;
   }
 
 }
