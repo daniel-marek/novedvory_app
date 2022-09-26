@@ -50,41 +50,59 @@ $gap: 16px;
   color: $color-grey;
 }
 */
-
-.nav__links {
-  list-style: none;
-  display: inline-block;
-
-  li {
-    display: inline-block;
-    padding: 0px 30px;
-    color: $color-white;
-    font-size: 18px;
-    transition: all 0.3s ease 0s;
-
-    &:hover {
-      color: $color-grey;
-    }
+  .nav__links {
+    display: none;
   }
-}
 
+  .cta {
+    display: none;
+  }
 
-.cta button {
-  padding: 15px 30px;
-  background-color: $color-primary;
-  color: $color-white;
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
+  .hamburger {
+    cursor: pointer;
+  }
 
-  &:hover {
+  .burger__bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background-color: $color-secondary;
-    color: $color-blue;
   }
-}
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav__links {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: dimgray;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav__links li {
+    margin: 16px 0;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
 
 .articles {
   margin-top: 16px;
@@ -252,6 +270,50 @@ $gap: 16px;
   .container {
     text-align: left;
   }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    list-style: none;
+    display: inline-block;
+    background-color: transparent;
+  }
+  
+  .nav__links li {
+    display: inline-block;
+    padding: 0px 30px;
+    color: $color-white;
+    font-size: 18px;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .nav__links li:hover {
+    color: $color-grey;
+  }
+
+  .cta {
+    display: block;
+  }
+
+  .cta button {
+  padding: 15px 30px;
+  background-color: $color-primary;
+  color: $color-white;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    background-color: $color-secondary;
+    color: $color-blue;
+  }
+}
 
   .news {
     &__items {
