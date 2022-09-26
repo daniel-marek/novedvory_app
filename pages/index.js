@@ -1,55 +1,48 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.scss'
 
+
+import {useEffect} from "react";
+
+const DUMMY_DATA = [
+    {
+        title: 'Novace vyhrali 3:0',
+        date: '2021-10-10',
+        imageUrl: 'https://picsum.photos/320/240'
+    },
+    {
+        title: 'Novace prihrali 3:0',
+        date: '2021-10-11',
+        imageUrl: 'https://picsum.photos/320/240'
+    },
+    {
+        title: 'Novace remizovali 3:3',
+        date: '2021-10-12',
+        imageUrl: 'https://picsum.photos/320/240'
+    },
+]
 
 
 export default function Home() {
   return (
     <div>
-      <header className={styles.header}>
-          <div className={styles.container__header}>
-            <a className={styles.logo} href="#">
-              <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
-            </a>
-        <nav>
-          <ul className={styles.nav__links}>
-            <li><a href="#">Aktuality</a></li>
-            <li><a href="#">Muži A</a></li>
-            <li><a href="#">Hřiště</a></li>
-            <li><a href="#">Sponzoři</a></li>
-            <li><a href="#">Historie</a></li>
-            <li><a href="#">Klub</a></li>
-          </ul>
-        </nav>
-        <a className={styles.cta} href="#">
-            <button>Program zápasů</button>
-        </a>
-        </div>
-      </header>
-
-      
       
       <div className={styles.container}>
           <div className={styles.articles}>
-            <div className={`${styles.articles__article} ${styles["articles__article--big"]}`} style={{'--url': 'url(https://picsum.photos/320/240)'}}>
-              <div className={styles.articles__article__big}>
-                <h4>Kategorie článku!</h4>
-                <h3>Titulek článku!</h3>
-                </div>
-              </div>
-            <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
-              <div className={styles.articles__article__big}>
-                <h4>Kategorie článku!</h4>
-                <h3>Titulek článku!</h3>
-                </div>
-              </div>
-            <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
-              <div className={styles.articles__article__small}>
-                <h4>Kategorie článku!</h4>
-                <h3>Titulek článku!</h3>
-                </div>
-              </div>
+          {DUMMY_DATA.map((article, i) => {
+                  return (
+                      <div
+                          key={article.title}
+                          className={`${styles.articles__article} ${i === 0 ? styles["articles__article--big"] : styles["articles__article--small"]}`}
+                          style={{'--url': `url(${article.imageUrl})`}}
+                      >
+                          <h3>{article.title}</h3>
+                          <p>{article.date}</p>
+                      </div>
+                  )
+              })}
         </div>
         
 
