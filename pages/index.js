@@ -3,31 +3,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.scss'
 import {useEffect} from "react";
-
-const DUMMY_DATA = [
-    {
-        title: 'Novace vyhrali 3:0',
-        date: '2021-10-10',
-        imageUrl: 'https://picsum.photos/320/240'
-    },
-    {
-        title: 'Novace prihrali 3:0',
-        date: '2021-10-11',
-        imageUrl: 'https://picsum.photos/320/240'
-    },
-    {
-        title: 'Novace remizovali 3:3',
-        date: '2021-10-12',
-        imageUrl: 'https://picsum.photos/320/240'
-    },
-]
+import {fetchArticles, fetchArticlesForIndex} from "../data";
+import useSwr from 'swr';
 
 export default function Home() {
+
+  const {data: articles, mutate} = useSwr('articles', fetchArticlesForIndex);
   return (
     <div>
       <div className={styles.container}>
           <div className={styles.articles}>
-              {DUMMY_DATA.map((article, i) => {
+              {articles ? articles.map((article, i) => {
                   return (
                       <div
                           key={article.title}
@@ -35,10 +21,10 @@ export default function Home() {
                           style={{'--url': `url(${article.imageUrl})`}}
                       >
                           <h3>{article.title}</h3>
-                          <p>{article.date}</p>
+                          <p>{article.publishedTimeStamp}</p>
                       </div>
                   )
-              })}
+              }) : <div>loading articles</div>}
         </div>
 
 
