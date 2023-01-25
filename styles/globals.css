@@ -13,3 +13,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h2 {
+  color: #003B6B;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
