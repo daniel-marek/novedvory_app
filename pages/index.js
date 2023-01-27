@@ -27,6 +27,8 @@ export default function Home() {
               }) : <div>loading articles</div>}
           </div> */}
 
+        <div className={styles.section} id="aktuality">
+          <h2>Aktuality</h2>
           <div className={styles.articles}>
           {articles ? articles.map((article, i) => {
                   return (
@@ -41,12 +43,13 @@ export default function Home() {
               }) : <div>loading articles</div>}
 
           </div>
+        </div>
 
-          <div className={styles.articles__button}>
+          {/* <div className={styles.articles__button}>
           <a href="#" className={styles.articles__link}>
             VŠECHNY ČLÁNKY
           </a>
-          </div>
+          </div> */}
 
 
           <div className={`${styles.buttons} ${styles.section}`}>
@@ -79,12 +82,12 @@ export default function Home() {
       <div className={`${styles.club} ${styles.section}`} id="klub">
         <h2>Klub</h2>
       </div>
-      <div className={`${styles.field} ${styles.section}`} id="hriste">
+      {/* <div className={`${styles.field} ${styles.section}`} id="hriste">
         <h2>Hřiště</h2>
-      </div>
-      <div className={`${styles.history} ${styles.section}`} id="historie">
+      </div> */}
+      {/* <div className={`${styles.history} ${styles.section}`} id="historie">
         <h2>Historie</h2>
-      </div>
+      </div> */}
 
     </div>
 
@@ -97,8 +100,8 @@ export default function Home() {
                 <li><a href="#aktuality">Aktuality</a></li>
                 <li><a href="#sponzori">Sponzoři</a></li>
                 <li><a href="#klub">Klub</a></li>
-                <li><a href="#hriste">Hřiště</a></li>
-                <li><a href="#historie">Historie</a></li>
+                {/* <li><a href="#hriste">Hřiště</a></li> */}
+                {/* <li><a href="#historie">Historie</a></li> */}
           </ul>
           <h4>© 2023 Fotbalový klub SK 1933 ČUS Nové Dvory</h4>
         </div>

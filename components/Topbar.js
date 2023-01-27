@@ -33,8 +33,8 @@ const Topbar = () => {
                 <li><a href="#aktuality">Aktuality</a></li>
                 <li><a href="#sponzori">Sponzoři</a></li>
                 <li><a href="#klub">Klub</a></li>
-                <li><a href="#hriste">Hřiště</a></li>
-                <li><a href="#historie">Historie</a></li>
+                {/* <li><a href="#hriste">Hřiště</a></li> */}
+                {/* <li><a href="#historie">Historie</a></li> */}
                 
               </ul>
             </nav>
