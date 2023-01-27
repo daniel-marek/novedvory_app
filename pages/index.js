@@ -29,20 +29,31 @@ export default function Home() {
 
         <div className={styles.section} id="aktuality">
           <h2>Aktuality</h2>
+
+         
           <div className={styles.articles}>
+          
+          
           {articles ? articles.map((article, i) => {
                   return (
+                    <Link href={`/articles/${article.id}`}>
+                          
+                       
                       <div
                           key={article.title}
                           className={`${styles.articles__article}`}
                       >
                           <h3>{article.title}</h3>
                           <p>{article.publishedTimeStamp}</p>
+    
                       </div>
+                      </Link>
                   )
               }) : <div>loading articles</div>}
-
+            
           </div>
+          
+          
         </div>
 
           {/* <div className={styles.articles__button}>
