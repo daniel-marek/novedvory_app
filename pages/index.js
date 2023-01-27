@@ -4,34 +4,38 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.scss'
 
 
-import {useEffect} from "react";
-
-const DUMMY_DATA = [
-    {
-        title: 'Novace vyhrali 3:0',
-        date: '2021-10-10',
-        imageUrl: 'https://picsum.photos/320/240'
-    },
-    {
-        title: 'Novace prihrali 3:0',
-        date: '2021-10-11',
-        imageUrl: 'https://picsum.photos/320/240'
-    },
-    {
-        title: 'Novace remizovali 3:3',
-        date: '2021-10-12',
-        imageUrl: 'https://picsum.photos/320/240'
-    },
-]
-
 
 export default function Home() {
+
+  const {data: articles, mutate} = useSwr('articles', fetchArticlesForIndex);
   return (
     <div>
+      <header className={styles.header}>
+          <div className={styles.container__header}>
+            <a className={styles.logo} href="#">
+          <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
+        </a>
+        <nav>
+          <ul className={styles.nav__links}>
+            <li><a href="#">Aktuality</a></li>
+            <li><a href="#">Muži A</a></li>
+            <li><a href="#">Hřiště</a></li>
+            <li><a href="#">Sponzoři</a></li>
+            <li><a href="#">Historie</a></li>
+            <li><a href="#">Klub</a></li>
+          </ul>
+        </nav>
+        <a className={styles.cta} href="#">
+            <button>Program zápasů</button>
+        </a>
+        </div>
+      </header>
+
+      
       
       <div className={styles.container}>
-          <div className={styles.articles}>
-          {DUMMY_DATA.map((article, i) => {
+          {/* <div className={styles.articles}>
+              {articles ? articles.map((article, i) => {
                   return (
                       <div
                           key={article.title}
@@ -39,26 +43,89 @@ export default function Home() {
                           style={{'--url': `url(${article.imageUrl})`}}
                       >
                           <h3>{article.title}</h3>
-                          <p>{article.date}</p>
+                          <p>{article.publishedTimeStamp}</p>
                       </div>
                   )
-              })}
+              }) : <div>loading articles</div>}
+          </div> */}
+
+          <div className={styles.articles}>
+            <div className={`${styles.articles__article} ${styles["articles__article--big"]}`} style={{'--url': 'url(https://picsum.photos/320/240)'}}>
+                <h3>PRDEL!</h3>
+            </div>
+            <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
+                <h3>PRDEL!</h3>
+            </div>
+            <div className={`${styles.articles__article} ${styles["articles__article--small"]}`}  style={{'--url': 'url(https://picsum.photos/320/240)'}}>
+                <h3>PRDEL!</h3>
+            </div>
         </div>
         
 
-          <div className={styles.buttons}>
-        <a href="#" className={styles.buttons__link}>
-          Pohár OFS - rozlosování a výsledky
-        </a>
-        <a href="#" className={styles.buttons__link}>
-          OKRESNÍ PŘEBOR - rozlosování a výsledky
-        </a>
-        <a href="#" className={styles.buttons__link}>
-          OKRESNÍ PŘEBOR - tabulka
-        </a>
+          <div className={`${styles.buttons} ${styles.section}`}>
+          <a href="https://souteze.fotbal.cz/turnaje/hlavni/bbcd5c4b-ef68-4f1f-ab1a-881c1e9a303c" className={styles.buttons__link} target="_blank">
+            Pohár OFS - rozlosování a výsledky
+          </a>
+          <a href="https://is.fotbal.cz/souteze/detail-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9" className={styles.buttons__link} target="_blank">
+            OKRESNÍ PŘEBOR - rozlosování a výsledky
+          </a>
+          <a href="https://is.fotbal.cz/souteze/tabulky-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9" className={styles.buttons__link} target="_blank">
+            OKRESNÍ PŘEBOR - tabulka
+          </a>
+          </div>
+        
+ 
+
+      <div className={`${styles.sponsors} ${styles.section}`} id="sponzori">
+        <h2>Sponzoři</h2>
+        <div className={styles.sponsors__items}>
+          <div>
+            <img src='nove_dvory.png' alt=''  />
+          </div>
+          <div>
+            <img src='stredocesky_kraj.gif' alt=''  />
+          </div>
+          
+        </div>
       </div>
 
-      <div className={styles.news}>
+      <div className={`${styles.club} ${styles.section}`} id="klub">
+        <h2>Klub</h2>
+      </div>
+      <div className={`${styles.field} ${styles.section}`} id="hriste">
+        <h2>Hřiště</h2>
+      </div>
+      <div className={`${styles.history} ${styles.section}`} id="historie">
+        <h2>Historie</h2>
+      </div>
+
+    </div>
+
+      <footer className={styles.footer}>
+        <div className={styles.footer__items}>
+          <a href="#">
+            <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
+          </a>
+          <ul className={styles.nav_links_footer}>
+                <li><a href="#aktuality">Aktuality</a></li>
+                <li><a href="#sponzori">Sponzoři</a></li>
+                <li><a href="#klub">Klub</a></li>
+                <li><a href="#hriste">Hřiště</a></li>
+                <li><a href="#historie">Historie</a></li>
+          </ul>
+          <h4>© 2023 Fotbalový klub SK 1933 ČUS Nové Dvory</h4>
+        </div>
+      </footer>
+      
+            
+    </div>
+    
+  );
+  
+}
+/*
+
+     <div className={`${styles.news} ${styles.section}`}>
         <h2>Další zprávy</h2>
           <div className={styles.news__items}>
               <div>
@@ -74,47 +141,10 @@ export default function Home() {
 
 
 
+
       </div>
 
-      <div className={styles.sponsors}>
-        <h2>Sponzoři</h2>
-        <div className={styles.sponsors__items}>
-          <div>
-            <img src='nove_dvory.png' alt=''  />
-          </div>
-          <div>
-            <img src='stredocesky_kraj.gif' alt=''  />
-          </div>
-          
-        </div>
-      </div>
 
-    </div>
-
-      <footer className={styles.footer}>
-        <div className={styles.footer__items}>
-          <a href="#">
-            <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
-          </a>
-          <ul className={styles.nav_links_footer}>
-              <li><a href="#">Aktuality</a></li>
-              <li><a href="#">Muži A</a></li>
-              <li><a href="#">Hřiště</a></li>
-              <li><a href="#">Sponzoři</a></li>
-              <li><a href="#">Historie</a></li>
-              <li><a href="#">Klub</a></li>
-          </ul>
-          <h4>© 2022 Fotbalový klub SK 1933 ČUS Nové Dvory</h4>
-        </div>
-      </footer>
-      
-            
-    </div>
-    
-  );
-  
-}
-/*
   return (
     <div className={styles.container}>
       <Head>

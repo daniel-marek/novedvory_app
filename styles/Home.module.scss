@@ -6,8 +6,10 @@
 
 $gap: 16px;
 
+
+
 .header {
-  padding: 10px 10%;
+  // padding: 10px 10%;
   background-color: $color-blue;
   border-bottom: 5px solid $color-secondary;
 }
@@ -17,15 +19,20 @@ $gap: 16px;
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  margin: 0 auto;
-  max-width: 1280px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1280px;
-  padding: 0 16px;
+  padding-left: 16px;
+  padding-right: 16px;
   text-align: center;
+}
+
+.section {
+  padding: 32px 0;
 }
 
 .logo__img {
@@ -110,12 +117,12 @@ $gap: 16px;
   flex-direction: column;
 
   &__article {
-    background-image: var(--url);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 25px 5px rgba($color: #000000, $alpha: .2);
     min-height: 200px;
     margin-bottom: $gap;
+    padding: 16px;
 
     &--small {
       flex: 1;
@@ -127,15 +134,37 @@ $gap: 16px;
   }
 }
 
+.articles__button {
+  display: flex;
+  flex-direction: column;
+}
+
+.articles__link {
+  text-align: center;
+  padding: 32px 16px;
+  background-color: $color-blue;
+  color: $color-white;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    background-color: $color-secondary;
+    color: $color-blue;
+  }
+}
+
 
 .buttons {
   display: flex;
-  padding: 30px;
   flex-direction: column;
+  row-gap: 16px;
 
   &__link {
     text-align: center;
-    margin-bottom: 16px;
     padding: 32px 16px;
     background-color: $color-blue;
     color: $color-white;
@@ -161,12 +190,7 @@ $gap: 16px;
     gap: 5px;
   }
 
-  h2 {
-    color: $color-blue;
-    font-size: 32px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
+
 
   img {
     width: 100%;
@@ -174,15 +198,6 @@ $gap: 16px;
 }
 
 .sponsors {
-  margin-bottom: 20px;
-
-  h2 {
-    color: $color-blue;
-    font-size: 32px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
   &__items {
     display: flex;
     flex-direction: column;
@@ -191,7 +206,6 @@ $gap: 16px;
 
   img {
     width: 40%;
-
   }
 }
 
@@ -241,11 +255,13 @@ $gap: 16px;
     margin-top: 50px;
     height: 500px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 2rem;
 
     &__article {
-      margin-bottom: 0;
+      width: 100%;
+      text-align: center;
 
       &--big {
         flex-basis: 100%;
@@ -270,50 +286,6 @@ $gap: 16px;
   .container {
     text-align: left;
   }
-
-  .hamburger {
-    display: none;
-  }
-
-  .nav__links {
-    position: static;
-    list-style: none;
-    display: inline-block;
-    background-color: transparent;
-  }
-  
-  .nav__links li {
-    display: inline-block;
-    padding: 0px 30px;
-    color: $color-white;
-    font-size: 18px;
-    transition: all 0.3s ease 0s;
-  }
-  
-  .nav__links li:hover {
-    color: $color-grey;
-  }
-
-  .cta {
-    display: block;
-  }
-
-  .cta button {
-  padding: 15px 30px;
-  background-color: $color-primary;
-  color: $color-white;
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-
-  &:hover {
-    background-color: $color-secondary;
-    color: $color-blue;
-  }
-}
 
   .news {
     &__items {
