@@ -241,8 +241,29 @@ $gap: 16px;
       color: $color-grey;
     }
   }
-
 }
+
+.login {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  &__position {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  &__div {
+    display: flex;
+    flex-direction: column;
+    row-gap: .2rem;
+  }
+  &__btn {
+    display: flex;
+    flex-direction: row;
+    gap: .2rem;
+  }
+}
+
 
 
 @media(min-width: 768px) {

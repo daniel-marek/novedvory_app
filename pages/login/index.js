@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import useIsAuthenticated from "../../utils/useIsAuthenticated";
+import styles from '../../styles/Home.module.scss';
 
 
 const LoginPage = () => {
@@ -27,18 +28,29 @@ const LoginPage = () => {
   }, [auth]);
 
   return (
-    <div>
+    <div className={styles.login}>
+      <div className={styles.login__position}>
       <h2>Přihlášení pro správce</h2>
-      <label>Email</label>
-      <input value={email} type="text" onChange={onEmailChange}/>
+
+      <div className={styles.login__div}>
+      <label htmlFor='email'>Email</label>
+      <input name='email' value={email} type="text" onChange={onEmailChange}/>
+      </div>
+
+      <div className={styles.login__div}>
       <label>Heslo</label>
       <input value={password} type="password" onChange={onPasswordChange}/>
+      </div>
+
+      <div className={styles.login__btn}>
       <button onClick={onLogin}>
         Log In
       </button>
       {isAuthenticated ? (<button onClick={onLogOut}>
         Log Out
       </button>) : null}
+      </div>
+      </div>
 
     </div>
   );

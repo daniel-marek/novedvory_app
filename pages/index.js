@@ -80,12 +80,12 @@ export default function Home() {
       <div className={`${styles.sponsors} ${styles.section}`} id="sponzori">
         <h2>Sponzoři</h2>
         <div className={styles.sponsors__items}>
-          <div>
+          <a href='https://www.novedvory.cz/' target="_blank">
             <img src='nove_dvory.png' alt=''  />
-          </div>
-          <div>
+          </a>
+          <a href='https://www.kr-stredocesky.cz/' target="_blank">
             <img src='stredocesky_kraj.gif' alt=''  />
-          </div>
+          </a>
           
         </div>
       </div>
