@@ -25,7 +25,7 @@ const Topbar = () => {
     return (
         <header className={styles.header}>
           <div className={`${styles.container__header} ${styles.container}`}>
-            <a className={styles.logo} href="#">
+            <a className={styles.logo} href="/">
             <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
             </a>
             <nav>

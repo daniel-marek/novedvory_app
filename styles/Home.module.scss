@@ -110,6 +110,15 @@ $gap: 16px;
     left: 0;
   }
 
+.article {
+  text-align: center;
+  max-width: 75%;
+  margin: 0 auto;
+  & h1 {
+    text-transform: uppercase;
+  }
+}
+
 .articles {
   margin-top: 16px;
   display: flex;

@@ -45,6 +45,7 @@ export default function Home() {
                       >
                           <h3>{article.title}</h3>
                           <p>{article.publishedTimeStamp}</p>
+                          <div>{article.content}</div>
     
                       </div>
                       </Link>
