@@ -4,6 +4,7 @@ import {createNewArticle, fetchArticles, deleteArticle, patchArticle} from "../.
 import useRedirectIfNotAuthenticated from "../../utils/useRedirectIfNotAuthenticated";
 import Link from "next/link";
 import useSwr from 'swr';
+import styles from '../../styles/Home.module.scss';
 
 const Dashboard = () => {
   const router = useRouter();
@@ -32,22 +33,29 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Dashboard</h1>
+      <div className={styles.container}>
+        <h1>Dashboard</h1>
 
-      <h3>Articles</h3>
-      {articles ? articles.map((article) => (
-        <div key={article.id}>
-          <Link href={`/articles/${article.id}/edit`}>
-            <a>{article.title}</a>
-          </Link>
-          <div>{article.subtitle}</div>
-          {article.isPublished ? (
-            <div>Published: {new Date(article.publishedTimeStamp).toLocaleDateString()}</div>) : null}
-          <button onClick={() => onDeleteArticle(article.id)}>delete article</button>
-          <button onClick={() => onTogglePublish(article)}>{article.isPublished ? 'Unpublish' : 'Publish'}</button>
-        </div>
-      )) : <div>Loading articles</div>}
-      <button onClick={onCreateNewArticle}>Create new article</button>
+        <h3>Články</h3>
+        {articles ? articles.map((article) => (
+          <div className={styles.dashb} key={article.id}>
+            <Link href={`/articles/${article.id}/edit`}>
+              <a>Název: {article.title}</a>
+            </Link>
+            <div>{article.subtitle}</div>
+            <div>{article.isPublished ? (
+              <div>Publikováno: {new Date(article.publishedTimeStamp).toLocaleDateString()}</div>) : null}
+            </div>
+            <div className={`${styles.dashb__buttons}`}>
+            <button onClick={() => onDeleteArticle(article.id)}>vymazat článek</button>
+            <button onClick={() => onTogglePublish(article)}>{article.isPublished ? 'zrušit publikování' : 'publikovat'}</button>
+
+            </div>
+          </div>
+        )) : <div>Loading articles</div>}
+        <button onClick={onCreateNewArticle}>Napsat nový článek</button>
+
+      </div>
     </div>
   );
 }

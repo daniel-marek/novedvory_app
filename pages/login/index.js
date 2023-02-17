@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import useIsAuthenticated from "../../utils/useIsAuthenticated";
 import styles from '../../styles/Home.module.scss';
+import { useRouter } from 'next/router';
 
 
 const LoginPage = () => {
@@ -9,13 +10,17 @@ const LoginPage = () => {
   const {isAuthenticated} = useIsAuthenticated();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter(); 
+  
+  
 
   const onEmailChange = useCallback((e) => setEmail(e.target.value), []);
   const onPasswordChange = useCallback((e) => setPassword(e.target.value), []);
 
   const onLogin = useCallback(async () => {
     try {
-    await signInWithEmailAndPassword(auth, email, password)}
+    await signInWithEmailAndPassword(auth, email, password);
+    router.push("/dashboard")}
       catch (e) {
       const errorCode = e.code;
       const errorMessage = e.message;

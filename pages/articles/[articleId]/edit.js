@@ -4,6 +4,7 @@ import Editor from "../../../components/Editor";
 import useSwr from 'swr'
 import {fetchArticle, patchArticle} from "../../../data";
 import useRedirectIfNotAuthenticated from "../../../utils/useRedirectIfNotAuthenticated";
+import styles from '../../../styles/Home.module.scss';
 
 const ArticleEdit = () => {
   const router = useRouter();
@@ -55,7 +56,7 @@ const ArticleEdit = () => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>{title ? title : 'Nový článek'}</h1>
           <h3>Titul</h3>
           <input onChange={onTitleChange} value={title} />
@@ -72,6 +73,8 @@ const ArticleEdit = () => {
           >
             {saveLoading ? 'Ukládám' : 'Uložit'}
           </button>
+
+          <button><a href={`/dashboard`}>Vrátit se zpět</a></button> 
     </div>
   );
 };
