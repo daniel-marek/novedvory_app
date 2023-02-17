@@ -31,8 +31,9 @@ export default function Home() {
                           className={`${styles.articles__article}`}
                       >
                           <h3>{article.title}</h3>
-                          <p>{new Date(article.publishedTimeStamp).toLocaleDateString()}</p>
-                          <div>{article.content.slice(0, 500)}</div>
+                          <p>{article.subtitle}</p>
+                          {/* <p>{new Date(article.publishedTimeStamp).toLocaleDateString()}</p>
+                          <div>{article.content.slice(0, 600)}</div> */}
     
                       </div>
                       </Link>
