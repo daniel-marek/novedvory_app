@@ -142,6 +142,17 @@ $gap: 16px;
       flex-basis: 100%;
     }
   }
+
+  &__read {
+    text-decoration: underline;
+  }
+
+  &__load {
+    width: 30%;
+    height: 30%;
+    align-self: center;
+
+  }
 }
 
 .articles__button {
@@ -217,6 +228,24 @@ $gap: 16px;
   img {
     width: 40%;
   }
+}
+
+.club {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  &__logo {
+    max-width: 260px;
+  }
+  &__table {
+    width: 100%;
+  }
+  &__map {
+    height: 300px;
+  }
+
 }
 
 .footer {
@@ -326,6 +355,16 @@ $gap: 16px;
       }
     }
   }
+
+  .club {
+    &__container {
+      flex-direction: row;
+    }
+    &__map {
+      height: auto;
+    }
+  }
+  
 }
 
 @media(min-width: 992px) {

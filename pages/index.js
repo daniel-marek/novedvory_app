@@ -7,6 +7,7 @@ import {fetchArticles, fetchArticlesForIndex} from "../data";
 import useSwr from 'swr';
 import React from 'react';
 
+
 export default function Home() {
 
   const {data: articles, mutate} = useSwr('articles', fetchArticlesForIndex);
@@ -33,12 +34,13 @@ export default function Home() {
                           <h3>{article.title}</h3>
                           <p>{new Date(article.publishedTimeStamp).toLocaleDateString()}</p>
                           <p>{article.subtitle}</p>
+                          <p className={styles.articles__read}>Čti více</p>
                           
     
                       </div>
                       </Link>
                   )
-              }) : <div>loading articles</div>}
+              }) : <img className={styles.articles__load} src="ring.svg" />}
             
           </div>
           
@@ -81,6 +83,49 @@ export default function Home() {
 
       <div className={`${styles.club} ${styles.section}`} id="klub">
         <h2>Klub</h2>
+        <div className={styles.club__container}>
+          <div className={styles.club__table}>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Název klubu:</td>
+                    <td>SK 1933 ČUS Nové Dvory, z.s.</td>
+                  </tr>
+                  <tr>
+                    <td>Adresa:</td>
+                    <td>Havlíčkova 258, 285 31 Nové Dvory</td>
+                  </tr>
+                  <tr>
+                    <td>Předseda klubu:</td>
+                    <td>ČUS Nové Dvory</td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td>ČUS Nové Dvory</td>
+                  </tr>
+                  <tr>
+                    <td>IČO:</td>
+                    <td>18620833</td>
+                  </tr>
+                  <tr>
+                    <td>Bankovní spojení:</td>
+                    <td>ČUS Nové Dvory</td>
+                  </tr>
+                  <tr>
+                    <td>Klubové barvy:</td>
+                    <td>modrá, žlutá</td>
+                  </tr>
+                  <tr>
+                    <td>Rok založení:</td>
+                    <td>1933</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
+            <iframe className={styles.club__map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2566.4134936750306!2d15.330409047466176!3d49.96610366600859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c40cf1704baff%3A0x1592340b37ecdd90!2zSGF2bMOtxI1rb3ZhIDI1OCwgMjg1IDMxIE5vdsOpIER2b3J5!5e0!3m2!1scs!2scz!4v1677062729459!5m2!1scs!2scz" style={{border: "0"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          
+        </div>
       </div>
       {/* <div className={`${styles.field} ${styles.section}`} id="hriste">
         <h2>Hřiště</h2>
