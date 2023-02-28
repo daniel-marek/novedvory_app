@@ -55,13 +55,13 @@ export default function Home() {
 
 
           <div className={`${styles.buttons} ${styles.section}`}>
-          <a href="https://souteze.fotbal.cz/turnaje/hlavni/bbcd5c4b-ef68-4f1f-ab1a-881c1e9a303c" className={styles.buttons__link} target="_blank">
+          <a href="https://souteze.fotbal.cz/turnaje/hlavni/bbcd5c4b-ef68-4f1f-ab1a-881c1e9a303c" className={styles.buttons__link} target="_blank" rel="noreferrer">
             Pohár OFS - rozlosování a výsledky
           </a>
-          <a href="https://is.fotbal.cz/souteze/detail-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9" className={styles.buttons__link} target="_blank">
+          <a href="https://is.fotbal.cz/souteze/detail-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9" className={styles.buttons__link} target="_blank" rel="noreferrer">
             OKRESNÍ PŘEBOR - rozlosování a výsledky
           </a>
-          <a href="https://is.fotbal.cz/souteze/tabulky-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9" className={styles.buttons__link} target="_blank">
+          <a href="https://is.fotbal.cz/souteze/tabulky-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9" className={styles.buttons__link} target="_blank" rel="noreferrer">
             OKRESNÍ PŘEBOR - tabulka
           </a>
           </div>
@@ -71,10 +71,10 @@ export default function Home() {
       <div className={`${styles.sponsors} ${styles.section}`} id="sponzori">
         <h2>Sponzoři</h2>
         <div className={styles.sponsors__items}>
-          <a href='https://www.novedvory.cz/' target="_blank">
+          <a href='https://www.novedvory.cz/' target="_blank" rel="noreferrer">
             <img src='nove_dvory.png' alt=''  />
           </a>
-          <a href='https://www.kr-stredocesky.cz/' target="_blank">
+          <a href='https://www.kr-stredocesky.cz/' target="_blank" rel="noreferrer">
             <img src='stredocesky_kraj.gif' alt=''  />
           </a>
           
@@ -122,8 +122,7 @@ export default function Home() {
                 </tbody>
               </table>
           </div>
-
-            <iframe className={styles.club__map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2566.4134936750306!2d15.330409047466176!3d49.96610366600859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c40cf1704baff%3A0x1592340b37ecdd90!2zSGF2bMOtxI1rb3ZhIDI1OCwgMjg1IDMxIE5vdsOpIER2b3J5!5e0!3m2!1scs!2scz!4v1677062729459!5m2!1scs!2scz" style={{border: "0"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe className={styles.club__map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2566.4134936750306!2d15.330409047466176!3d49.96610366600859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c40cf1704baff%3A0x1592340b37ecdd90!2zSGF2bMOtxI1rb3ZhIDI1OCwgMjg1IDMxIE5vdsOpIER2b3J5!5e0!3m2!1scs!2scz!4v1677062729459!5m2!1scs!2scz" style={{border: "0"}} allowFullScreen="" loading="lazy"/>
           
         </div>
       </div>
