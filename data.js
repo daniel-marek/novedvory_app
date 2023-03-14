@@ -17,24 +17,20 @@ export const fetchArticles = async () => {
 }
 
 export const fetchArticlesForIndex = async () => {
-  console.log('fetching articles for index');
   const articles = [];
   const q = query(
     collection(db, 'articles'),
     where('isPublished', '==', true),
-    orderBy('publishedTimeStamp'),
+    orderBy('publishedTimeStamp', 'desc'),
     limit(3)
   );
-  console.log('query', q);
   const snapshot = await getDocs(q);
-  console.log('snapshot', snapshot);
   snapshot.forEach((doc) => {
     articles.push({
       id: doc.id,
       ...doc.data(),
     });
   });
-  console.log({articles})
   return articles;
 };
 

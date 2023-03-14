@@ -1,82 +1,50 @@
-import {useState} from "react";
+import {useState, useCallback} from "react";
 
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/Topbar.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 
 const Topbar = () => {
-    // const [burger-bar, setBurgerClass] = useState("burger-bar unclicked")
-    // const [menu_class, setMenuClass] = useState("menu hidden")
-    // const [isMenuClicked, setIsMenuClicked] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    // const updateMenu = () => {
-    //   if(!isMenuClicked) {
-    //     setBurgerClass("burger-bar clicked")
-    //     setMenuClass("menu visible")
-    //   } else {
-    //     setBurgerClass("burger-bar unclicked")
-    //     setMenuClass("menu hidden")
-    //   }
-    // }
+  const handleMenuClick = useCallback(() => {
+    setMenuOpen(v => !v);
+  }, [])
 
-    // return (
-    //     <header className={styles.header}>
-    //       <div className={`${styles.container__header} ${styles.container}`}>
-    //         <a className={styles.logo} href="/">
-    //         <img className={styles.logo__img}  src="logo.png" alt="logo-nove-dvory" />
-    //         </a>
-    //         <nav>
-    //           <ul className={styles.nav__links}>
-    //             <li><a href="#aktuality">Aktuality</a></li>
-    //             <li><a href="#sponzori">Sponzoři</a></li>
-    //             <li><a href="#klub">Klub</a></li>
-    //             {/* <li><a href="#hriste">Hřiště</a></li> */}
-    //             {/* <li><a href="#historie">Historie</a></li> */}
-                
-    //           </ul>
-    //         </nav>
-    //         <a className={styles.cta} href="https://is.fotbal.cz/souteze/detail-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9" target="_blank">
-    //             <button>Program zápasů</button>
-    //         </a>
-    //         <div className={styles.hamburger} >
-    //           <span className={`${styles.burger__bar} ${styles.unclicked}`}></span>
-    //           <span className={`${styles.burger__bar} ${styles.unclicked}`}></span>
-    //           <span className={`${styles.burger__bar} ${styles.unclicked}`}></span>
-    //         </div>
-    //       </div>
-    //   </header>
-    // )
+  const scrollToElement = useCallback((id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMenuOpen(false);
+    }
+  }, [])
 
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    const handleMenuClick = () => {
-      setMenuOpen(!menuOpen);
-    };
-  
-    return (
-      <header className={styles.header}>
-        <div className={`${styles.container__header} ${styles.container}`}>
-          <a className={styles.logo} href="/">
-            <img className={styles.logo__img} src="logo.png" alt="logo-nove-dvory" />
-          </a>
-          <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
-            <ul className={styles.nav__links}>
-              <li><a href="#aktuality">Aktuality</a></li>
-              <li><a href="#sponzori">Sponzoři</a></li>
-              <li><a href="#klub">Klub</a></li>
-            </ul>
-          </nav>
-          <a className={styles.cta} href="https://is.fotbal.cz/souteze/detail-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9" target="_blank">
-            <button>Program zápasů</button>
-          </a>
-          <div className={styles.hamburger} onClick={handleMenuClick}>
-            <span className={`${styles.burger__bar} ${menuOpen ? styles.clicked : styles.unclicked}`}></span>
-            <span className={`${styles.burger__bar} ${menuOpen ? styles.clicked : styles.unclicked}`}></span>
-            <span className={`${styles.burger__bar} ${menuOpen ? styles.clicked : styles.unclicked}`}></span>
-          </div>
-        </div>
-      </header>
-    );
-  };
+  return (
+    <header className={styles.header}>
+      <div className={styles["header-container"]}>
+        <Link className={styles.logo} href="/">
+          <Image src="/logo.png" width="100%" height="100%" alt="logo-nove-dvory"/>
+        </Link>
+      <nav className={`${styles.nav} ${menuOpen ? styles.nav__open : ''}`}>
+        <a className={styles.nav__link} onClick={() => scrollToElement('aktuality')}>Aktuality</a>
+        <a className={styles.nav__link} onClick={() => scrollToElement('sponzori')}>Sponzoři</a>
+        <a className={styles.nav__link} onClick={() => scrollToElement('klub')}>Klub</a>
+      </nav>
+      <a className={styles.cta}
+         href="https://is.fotbal.cz/souteze/detail-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9"
+         target="_blank" rel="noreferrer">
+        <button>Program zápasů</button>
+      </a>
+      <div className={styles.hamburger} onClick={handleMenuClick}>
+        <span className={`${styles.burger__bar}`}></span>
+        <span className={`${styles.burger__bar}`}></span>
+        <span className={`${styles.burger__bar}`}></span>
+      </div>
+      </div>
+    </header>
+  );
+};
 
 export default Topbar
+//TODO - refactor styles so article styles are not in homepage
