@@ -21,7 +21,7 @@ export default function Home() {
 
             {articles ? articles.map((article, i) => {
               return (
-                <Link href={`/articles/${article.id}`}>
+                <Link key={i} href={`/articles/${article.id}`}>
                   <div
                     key={article.title}
                     className={`${styles.articles__article}`}
