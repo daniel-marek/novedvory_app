@@ -1,17 +1,20 @@
-import useSwr from "swr";
-import {fetchArticle} from "../../../data";
-import {useRouter} from "next/router";
-import sanitizeHtml from 'sanitize-html';
-import styles from '../../../styles/Home.module.scss';
+import useSwr from 'swr'
+import { fetchArticle } from '../../../data'
+import { useRouter } from 'next/router'
+import sanitizeHtml from 'sanitize-html'
+import styles from '../../../styles/Home.module.scss'
 
 const ArticlePage = () => {
-  const router = useRouter();
-  const { articleId } = router.query;
+  const router = useRouter()
+  const { articleId } = router.query
 
-  const { data: article } = useSwr(`article-${articleId}`, fetchArticle(articleId));
+  const { data: article } = useSwr(
+    `article-${articleId}`,
+    fetchArticle(articleId),
+  )
 
   if (!article) {
-    return <div>loading</div>;
+    return <div>loading</div>
   }
 
   return (

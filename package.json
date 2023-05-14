@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^35.4.0",

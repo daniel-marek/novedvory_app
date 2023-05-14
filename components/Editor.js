@@ -1,17 +1,17 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react'
 
 const Editor = ({ data, onChange }) => {
-  const editorRef = useRef();
-  const [editorLoaded, setEditorLoaded] = useState(false);
-  const { CKEditor, ClassicEditor } = editorRef.current || {};
+  const editorRef = useRef()
+  const [editorLoaded, setEditorLoaded] = useState(false)
+  const { CKEditor, ClassicEditor } = editorRef.current || {}
 
   useEffect(() => {
     editorRef.current = {
       CKEditor: require('@ckeditor/ckeditor5-react').CKEditor,
       ClassicEditor: require('@ckeditor/ckeditor5-build-classic'),
-    };
-    setEditorLoaded(true);
-  }, []);
+    }
+    setEditorLoaded(true)
+  }, [])
   return (
     <div>
       {editorLoaded ? (
@@ -34,7 +34,7 @@ const Editor = ({ data, onChange }) => {
         'loading editor'
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Editor;
+export default Editor

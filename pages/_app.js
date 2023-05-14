@@ -1,16 +1,15 @@
 import '../styles/globals.css'
-import Topbar from "../components/Topbar";
-import {initializeFirebase} from "../firebase";
+import Topbar from '../components/Topbar'
+import { initializeFirebase } from '../firebase'
 
-initializeFirebase();
+initializeFirebase()
 
 function MyApp({ Component, pageProps }) {
-
   return (
-      <div>
-          <Topbar/>
-          <Component {...pageProps} />
-      </div>
+    <div>
+      <Topbar />
+      <Component {...pageProps} />
+    </div>
   )
 }
 
