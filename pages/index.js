@@ -11,6 +11,17 @@ export default function Home() {
   return (
     <div>
       <div className={styles.container}>
+        <div>
+          <h2>90 let fotbalu v Nových Dvorech</h2>
+          <div className={styles.oslavy}>
+            <img
+              width="100%"
+              height="100%"
+              alt="logo-nove-dvory"
+              src="/plakat.jpg"
+            />
+          </div>
+        </div>
         <div className={styles.section} id="aktuality">
           <h2>Aktuality</h2>
 
