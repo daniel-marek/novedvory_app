@@ -9,7 +9,6 @@ import {
 import useRedirectIfNotAuthenticated from '../../utils/useRedirectIfNotAuthenticated'
 import Link from 'next/link'
 import useSwr from 'swr'
-import styles from '../../styles/Home.module.scss'
 
 const Dashboard = () => {
   const router = useRouter()

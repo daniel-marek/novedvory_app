@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import useIsAuthenticated from '../../utils/useIsAuthenticated'
-import styles from '../../styles/Home.module.scss'
 import { useRouter } from 'next/router'
 
 const LoginPage = () => {

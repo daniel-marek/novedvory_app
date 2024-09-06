@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react'
 
-import styles from '../styles/Topbar.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -20,53 +19,39 @@ const Topbar = () => {
   }, [])
 
   return (
-    <header className={styles.header}>
-      <div className={styles['header-container']}>
-        <Link className={styles.logo} href="/">
-          <Image
-            src="/logo.png"
-            width="100%"
-            height="100%"
-            alt="logo-nove-dvory"
-          />
-        </Link>
-        <nav className={`${styles.nav} ${menuOpen ? styles.nav__open : ''}`}>
-          <a
-            className={styles.nav__link}
-            onClick={() => scrollToElement('aktuality')}
-          >
-            Aktuality
-          </a>
-          <a
-            className={styles.nav__link}
-            onClick={() => scrollToElement('sponzori')}
-          >
-            Sponzoři
-          </a>
-          <a
-            className={styles.nav__link}
-            onClick={() => scrollToElement('klub')}
-          >
-            Klub
-          </a>
-        </nav>
-        <a
-          className={styles.cta}
-          href="https://is.fotbal.cz/souteze/detail-souteze.aspx?req=9767b870-a9eb-4444-bec0-01acaae098c9"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button>Program zápasů</button>
-        </a>
-        <div className={styles.hamburger} onClick={handleMenuClick}>
-          <span className={`${styles.burger__bar}`}></span>
-          <span className={`${styles.burger__bar}`}></span>
-          <span className={`${styles.burger__bar}`}></span>
-        </div>
+    <div className="navbar bg-base-100">
+      <div className="navbar-start">
+        <Image
+          src="/logo.svg"
+          width="150px"
+          height="150px"
+          alt="logo-nove-dvory"
+        />
       </div>
-    </header>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1 text-2xl">
+          <li>
+            <a>Aktuality</a>
+          </li>
+          <li>
+            <a>Sponzoři</a>
+          </li>
+          <li>
+            <a>Klub</a>
+          </li>
+        </ul>
+      </div>
+      <div className="navbar-end">
+        <a
+          className="btn"
+          href="http://www.fotbal.cz.esports-7a-fotbal.superhosting.cz/souteze/turnaje/hlavni/b12390c4-ff94-4366-8c79-91de7521c42d"
+          target="_blank"
+        >
+          Program zápasů
+        </a>
+      </div>
+    </div>
   )
 }
 
 export default Topbar
-//TODO - refactor styles so article styles are not in homepage

@@ -4,7 +4,6 @@ import Editor from '../../../components/Editor'
 import useSwr from 'swr'
 import { fetchArticle, patchArticle } from '../../../data'
 import useRedirectIfNotAuthenticated from '../../../utils/useRedirectIfNotAuthenticated'
-import styles from '../../../styles/Home.module.scss'
 
 const ArticleEdit = () => {
   const router = useRouter()
@@ -57,7 +56,7 @@ const ArticleEdit = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className="">
       <h1>{title ? title : 'Nový článek'}</h1>
       <h3>Titul</h3>
       <input onChange={onTitleChange} value={title} />
