@@ -42,13 +42,13 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className={styles.container}>
+      <div className="">
         <h1>Dashboard</h1>
 
         <h3>Články</h3>
         {articles ? (
           articles.map((article) => (
-            <div className={styles.dashb} key={article.id}>
+            <div className="">
               <Link href={`/articles/${article.id}/edit`}>
                 <a>Název: {article.title}</a>
               </Link>
@@ -61,7 +61,7 @@ const Dashboard = () => {
                   </div>
                 ) : null}
               </div>
-              <div className={`${styles.dashb__buttons}`}>
+              <div className="">
                 <button onClick={() => onDeleteArticle(article.id)}>
                   vymazat článek
                 </button>

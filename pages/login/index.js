@@ -29,11 +29,11 @@ const LoginPage = () => {
   }, [auth])
 
   return (
-    <div className={styles.login}>
-      <div className={styles.login__position}>
+    <div className="">
+      <div className="">
         <h2>Přihlášení pro správce</h2>
 
-        <div className={styles.login__div}>
+        <div className="">
           <label htmlFor="email">Email</label>
           <input
             name="email"
@@ -43,12 +43,12 @@ const LoginPage = () => {
           />
         </div>
 
-        <div className={styles.login__div}>
+        <div className="">
           <label>Heslo</label>
           <input value={password} type="password" onChange={onPasswordChange} />
         </div>
 
-        <div className={styles.login__btn}>
+        <div className="">
           <button onClick={onLogin}>Log In</button>
           {isAuthenticated ? <button onClick={onLogOut}>Log Out</button> : null}
         </div>
